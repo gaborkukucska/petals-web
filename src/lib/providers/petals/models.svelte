@@ -62,15 +62,18 @@ export const chatModels : Record<string, ModelDetail> = {
         label: 'Petals - Guanaco-65b',
         max: 2048
       },
-      // 'codellama/CodeLlama-34b-Instruct-hf ': {
-      //   ...chatModelBase,
-      //   label: 'Petals - CodeLlama-34b',
+      'codellama/CodeLlama-34b-Instruct-hf': {
+        ...chatModelBase,
+        label: 'Petals - CodeLlama-34b',
       //   max: 2048
-      // },
-      // 'meta-llama/Llama-2-70b-hf': {
-      //   ...chatModelBase,
-      //   label: 'Petals - Llama-2-70b'
-      // },
+        start: '<s>',
+        stop: ['</s>', '[INST]', '[/INST]', '<<SYS>>', '<</SYS>>'],
+        delimiter: '</s><s>',
+        userStart: '[INST] User: ',
+        userEnd: ' [/INST]',
+        systemStart: '[INST]\n',
+        systemEnd: '\n[/INST]'
+      },
       'meta-llama/Llama-2-70b-chat-hf': {
         ...chatModelBase,
         label: 'Petals - Llama-2-70b-chat',
